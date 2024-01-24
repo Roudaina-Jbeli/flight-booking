@@ -43,7 +43,7 @@ module.exports = {
   deleteUser: function(req, res) {
     const userId = req.params.id;
     usersModel.delete(userId, function(err, results) {
-      if (err) res.status(500).json({ error: 'Internal Server Error' });
+      if (err) res.status(400).json({ error: 'Bad Request' });
       else {
         if (results.affectedRows > 0) {
           res.status(200).json({ message: 'User deleted successfully' });
@@ -54,3 +54,4 @@ module.exports = {
     });
   }
 };
+
