@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">*
       <Homeusers/>
-      <DeleteUser/>
+      <Home/>
+      {/* <DeleteUser/> */}
 
 
 </div>
