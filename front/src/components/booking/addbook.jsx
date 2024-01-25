@@ -45,7 +45,7 @@ function AddBook({ onClose, onAdd }) {
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" color="primary" onClick={handleAddBook}>
+        <Button  variant="contained" color="primary" onClick={handleAddBook}>
           Add Booking
         </Button>
         <Button onClick={onClose}>
