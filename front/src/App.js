@@ -1,16 +1,16 @@
 import './App.css';
 import Home from './components/booking/home';
-import  Homeusers from './components/users/homeusers';
-import DeleteUser from './components/users/deleteusers';
+import Homeusers from './components/users/homeusers';
+import Footer from './components/users/Footer';
 function App() {
   return (
     <div className="App">
-      <Homeusers/>
-      <Home/>
-      <DeleteUser/>
 
+      <Homeusers />
+      <Footer/>
+      <Home />
 
-</div>
+    </div>
   );
 }
 

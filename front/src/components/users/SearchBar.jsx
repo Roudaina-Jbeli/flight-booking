@@ -13,9 +13,11 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div>
-      <input type="text" value={searchTerm} onChange={handleInputChange} />
-      <button onClick={handleSearch}>Search</button>
+    <div className="search-bar-container">
+      {/* <input type="text" value={searchTerm} onChange={handleInputChange} placeholder="Search..." /> */}
+      {/* <button className="search-btn" onClick={handleSearch}>
+        Searchd
+      </button> */}
     </div>
   );
 }
