@@ -6,7 +6,7 @@ function DeleteBook({ bookingId, onClose, onDelete }) {
   const handleDeleteBook = () => {
     axios.delete(`http://localhost:8080/booking/delete/${bookingId}`)
       .then(response => {
-        onDelete(); // Notify parent component about the deletion
+        onDelete(); // Notify the parent component about the deletion
         onClose(); // Close the form
       })
       .catch(error => {

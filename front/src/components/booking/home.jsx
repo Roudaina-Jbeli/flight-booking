@@ -1,4 +1,4 @@
-// Home.jsx
+// home.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AddBook from './addbook.jsx';
@@ -15,7 +15,10 @@ function Home() {
   const [selectedBookingId, setSelectedBookingId] = useState(null);
 
   useEffect(() => {
-    // Fetch data from your server or API endpoint using Axios
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
     axios.get('http://localhost:8080/booking/getAll')
       .then((response) => {
         setBookings(response.data);
@@ -25,7 +28,7 @@ function Home() {
         console.error('Error fetching data:', error);
         setLoading(false);
       });
-  }, []);
+  };
 
   const handleAddClick = () => {
     setShowAddForm(true);
@@ -60,72 +63,28 @@ function Home() {
       // Your data for adding a new booking
     })
     .then(response => {
-      // Handle success (e.g., show a success message, update state, etc.)
       console.log('Booking added successfully');
-      // Fetch the updated data
-      axios.get('http://localhost:8080/booking/getAll')
-        .then((response) => {
-          setBookings(response.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-          setLoading(false);
-        });
+      fetchData();
     })
     .catch(error => {
       console.error('Error adding booking:', error);
     });
-    // Close the form
     handleFormClose();
   };
 
   const handleUpdate = () => {
-    // Implement your logic for updating a booking
-    axios.put(`http://localhost:8080/booking/update/${selectedBookingId}`, {
-      // Your data for updating the booking
-    })
-    .then(response => {
-      // Handle success (e.g., show a success message, update state, etc.)
-      console.log('Booking updated successfully');
-      // Fetch the updated data
-      axios.get('http://localhost:8080/booking/getAll')
-        .then((response) => {
-          setBookings(response.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-          setLoading(false);
-        });
-    })
-    .catch(error => {
-      console.error('Error updating booking:', error);
-    });
-    // Close the form
-    handleFormClose();
+    // The actual update logic is handled inside the UpdateBook component
+    // The handleUpdateBook function in UpdateBook.jsx performs the update and closes the form
   };
 
   const handleDelete = async () => {
-    // Implement your logic for deleting a booking
     try {
       await axios.delete(`http://localhost:8080/booking/delete/${selectedBookingId}`);
-      // Handle success (e.g., show a success message, update state, etc.)
       console.log('Booking deleted successfully');
-      // Fetch the updated data
-      axios.get('http://localhost:8080/booking/getAll')
-        .then((response) => {
-          setBookings(response.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-          setLoading(false);
-        });
+      fetchData();
     } catch (error) {
       console.error('Error deleting booking:', error);
     }
-    // Close the form
     handleFormClose();
   };
 
@@ -158,7 +117,7 @@ function Home() {
         <UpdateBook
           bookingId={selectedBookingId}
           onClose={handleFormClose}
-          onUpdate={handleUpdate}
+          onUpdate={fetchData} // Pass the fetchData function to UpdateBook for handling update
         />
       )}
       {showDeleteForm && (
