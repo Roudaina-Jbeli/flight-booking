@@ -7,7 +7,6 @@ function UpdateBook({ bookingId, onClose, onUpdate }) {
   const [bookingDatetime, setBookingDatetime] = useState('');
 
   useEffect(() => {
-    // Fetch the existing booking data and populate the form
     axios.get(`http://localhost:8080/booking/get/${bookingId}`)
       .then(response => {
         const { seat_number, booking_datetime } = response.data;

@@ -4,9 +4,9 @@ import  Homeusers from './components/users/homeusers';
 import DeleteUser from './components/users/deleteusers';
 function App() {
   return (
-    <div className="App">
-      <Home/>
+    <div className="App">*
       <Homeusers/>
+      <Home/>
       <DeleteUser/>
 
 
