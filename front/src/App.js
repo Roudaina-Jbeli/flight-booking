@@ -3,10 +3,9 @@ import Home from './components/booking/home';
 import  Homeusers from './components/users/homeusers';
 function App() {
   return (
-    <div className="App">
-      <Home/>
+    <div className="App">*
       <Homeusers/>
-      {/* <DeleteUser/> */}
+      <DeleteUser/>
 
 
 </div>
