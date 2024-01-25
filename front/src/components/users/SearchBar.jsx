@@ -8,15 +8,22 @@ function SearchBar({ onSearch }) {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearch = () => {
-    onSearch(searchTerm);
-  };
+  // SearchBar.jsx
+// const handleSearch = () => {
+//   onSearch(searchTerm);
+// };
+
 
   return (
     <div className="search-bar-container">
-      {/* <input type="text" value={searchTerm} onChange={handleInputChange} placeholder="Search..." /> */}
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleInputChange}
+        placeholder="Search..."
+      />
       {/* <button className="search-btn" onClick={handleSearch}>
-        Searchd
+      
       </button> */}
     </div>
   );
