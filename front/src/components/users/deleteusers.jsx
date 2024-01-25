@@ -14,7 +14,7 @@ const DeleteUser = ({ userId, onDelete }) => {
   };
 
   return (
-    <button onClick={handleDeleteClick}>Delete</button>
+    <button className='hibaa' onClick={handleDeleteClick}>Delete</button>
   );
 };
 
