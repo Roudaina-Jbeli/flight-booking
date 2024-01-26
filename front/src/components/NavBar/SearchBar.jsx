@@ -1,4 +1,3 @@
-// SearchBar.js
 import React, { useState } from 'react';
 
 function SearchBar({ onSearch }) {
@@ -8,10 +7,6 @@ function SearchBar({ onSearch }) {
     setSearchTerm(e.target.value);
   };
 
-  // SearchBar.jsx
-// const handleSearch = () => {
-//   onSearch(searchTerm);
-// };
 
 
   return (
@@ -22,9 +17,6 @@ function SearchBar({ onSearch }) {
         onChange={handleInputChange}
         placeholder="Search..."
       />
-      {/* <button className="search-btn" onClick={handleSearch}>
-      
-      </button> */}
     </div>
   );
 }
