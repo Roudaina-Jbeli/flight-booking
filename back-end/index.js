@@ -11,7 +11,7 @@ app.use(express.json())
 
 app.use('/users' , usersRoutes);
 app.use('/flights' , flightsRoutes);
-app.use('/booking', bookingsRoutes);
+app.use('/bookings', bookingsRoutes);
 
 
 app.listen(PORT, () => {
